@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.1...3.27)
 
 if (CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
   add_definitions(-fpic -W -DMG_ENABLE_LINES -DMG_ENABLE_OPENSSL)
-  add_compile_options(-W -Wall -Werror -Wextra -O3)
+  add_compile_options(-W -Wall -Werror -Wextra)
 endif()
 
 project(
@@ -26,6 +26,8 @@ endif()
 
 ##set(CMAKE_SHARED_LIBRARY_PREFIX "")
 add_library(mongoose SHARED mongoose.c)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fpic")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3")
 target_link_libraries(mongoose libssl.so)
 
 set_target_properties(mongoose PROPERTIES PUBLIC_HEADER "mongoose.h")
