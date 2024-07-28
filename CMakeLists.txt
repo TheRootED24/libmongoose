@@ -23,7 +23,7 @@ string(TIMESTAMP RELEASE_DATE)
 message(STATUS "RELEASE_DATE: ${RELEASE_DATE}")
 message(STATUS "VERSION:      ${VERSION}")
 
-
-set(CMAKE_BUILD_TYPE "Debug")
+## debug info (-g equiv)
+##set(CMAKE_BUILD_TYPE "Debug")
 
 add_subdirectory(src)
