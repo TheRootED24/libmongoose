@@ -1,2 +1,2 @@
 # libmongoose
-The Mongoose C Networking Shared Library
+The Mongoose C Networking Library. Compiled as a Shared Library
