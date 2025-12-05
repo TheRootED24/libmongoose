@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.27)
 
 if (CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
   add_definitions(-fpic -W -DMG_ENABLE_LINES)
-  add_compile_options(-W -Wall -Werror -Wextra -DMG_TLS=MG_TLS_BUILTIN)
+  add_compile_options(-W -Wall -Werror -Wextra -Wno-error=maybe-uninitialized -DMG_TLS=MG_TLS_BUILTIN)
 endif()
 
 project(
